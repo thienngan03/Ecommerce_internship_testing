@@ -27,6 +27,21 @@ class GuestController {
             return res.status(500).json({ message: "Internal server error" });
         }
     }
+    getProductByShopId = async (req, res) => {
+        const { shopId } = req.params;
+        try {
+            const products = await models.Product.findAll({
+                where: { shopId }
+            });
+            if (products.length === 0) {
+                return res.status(404).json({ message: "No products found for this shop" });
+            }
+            return res.status(200).json(products);
+        } catch (error) {
+            return res.status(500).json({ message: "Internal server error" });
+        }
+    }
+
     getShops = async (req, res) => {
         try {
             const shops = await models.Shop.findAll({
@@ -117,6 +132,7 @@ class GuestController {
             return res.status(500).json({ message: "Internal server error" });
         }
     }
+        
 }
 module.exports = new GuestController();
     
