@@ -102,6 +102,21 @@ class GuestController {
             return res.status(500).json({ message: "Internal server error" });
         }
     }
+    searchProductByCategory = async (req, res) => {
+        const { category } = req.query;
+        console.log("Search Category:", category);
+        try {
+            const products = await models.Product.findAll({
+                where: { category }
+            });
+            if (products.length === 0) {
+                return res.status(404).json({ message: "No products found in this category" });
+            }
+            return res.status(200).json(products);
+        } catch (error) {
+            return res.status(500).json({ message: "Internal server error" });
+        }
+    }
 }
 module.exports = new GuestController();
     

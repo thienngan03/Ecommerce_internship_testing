@@ -12,4 +12,6 @@ router.get('/shops/product/:productId', GuestController.getShopByProductId);
 // search 
 router.get('/search/products', GuestController.searchProduct);
 router.get('/search/shops', GuestController.searchShop);
+router.get('/search/products/category', GuestController.searchProductByCategory);
+
 module.exports = router;
