@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd server && npm start",
+    "server": "cd server && npm test",
     "client": "cd client && npm start",
     "test": "echo \"No tests specified\" && exit 0"
   },
