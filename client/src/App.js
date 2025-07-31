@@ -7,7 +7,7 @@ import Home from './Pages/Home.jsx';
 import Products from './Pages/Product.jsx';
 import SignUp from './Pages/SignUp.jsx';
 import Shop from './Pages/Shop.jsx';
-import Login from './Pages/Login.tsx';
+import Login from './Pages/Login.jsx';
 import ProductDetail from './Pages/ProductDetail.jsx';  
 
 // buyer
